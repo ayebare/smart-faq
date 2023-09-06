@@ -1,0 +1,29 @@
+.faq-body h2 {
+	background: url(../images/open.png) no-repeat 0% 10%;
+	padding-left: 20px;
+	cursor: pointer;
+	border-bottom: 1px solid #CCCCCC;
+    color: #053131;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.faq-body h2.close {
+	background-image: url(../images/close.png);
+	float:none;
+}
+.faq-body a.edit {
+    color: #1982D1;
+    font-size: 10px;
+    text-decoration: none;
+	float:right;
+}
+.faq-body  h2 a {
+    text-decoration: none;
+}
+.faq-body  h2 a:focus{
+      border: none;
+    }
+.faq-body .answer {
+padding-left: 20px;
+ }

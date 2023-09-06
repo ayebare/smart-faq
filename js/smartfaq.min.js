@@ -1,0 +1,1 @@
+(function(e){e(document).ready(function(){e(".answer").hide();e(".faq-body h2").click(function(){e(this).next().toggleClass("show");var t=e(this).next().attr("class");if(t.indexOf("show")!=-1){e(this).next(".answer").fadeIn();e(this).addClass("close")}else{e(this).next(".answer").fadeOut();e(this).removeClass("close")}return false})})})(jQuery)

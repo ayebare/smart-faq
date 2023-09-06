@@ -10,7 +10,7 @@ Author URI: http://en.gravatar.com/brooksx
 */
 ?>
 <?php
-//for your eyes only
+//for your eyes only 
 define('PLUGIN_DIR', dirname(__FILE__) . '/');
 define('SCRIPT_VER','1.4');
 register_activation_hook(__FILE__, 'smartfaq_plugin_install');
@@ -109,11 +109,11 @@ function smartfaq_shortcode_function($cat_attr)
         );
     if ('meta_value_num' == $ordering_by)
         $args['meta_key'] = '_smartfaq_order';
-
+    
     $return_string = '';
 
     $smartfaq_loop = new WP_Query($args);
-
+    
     /* Check if any faq's were returned. */
     if ($smartfaq_loop->have_posts()):
         while ($smartfaq_loop->have_posts()):
@@ -131,7 +131,7 @@ function smartfaq_shortcode_function($cat_attr)
     endif;
 	wp_reset_postdata();
     return $return_string;
-
+    
 }
 
 add_action('add_meta_boxes', 'smartfaq_order');
@@ -165,8 +165,8 @@ function smartfaq_save_order_meta($post_id)
         if (!current_user_can('edit_post', $post_id))
             return;
     }
-
-
+    
+    
     //verify the metadata is set smartfaq_order name attribute
     if (isset($_POST['smartfaq_order'])) {
         //save the metadata
