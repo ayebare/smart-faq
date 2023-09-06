@@ -5,6 +5,7 @@
 	<file>.</file>
 
 	<rule ref="WordPress">
+		<exclude name="PHPCompatibility.Syntax.NewFunctionCallTrailingComma.FoundInFunctionCall" />
 		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
 		<exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
 		<exclude name="Generic.Formatting.MultipleStatementAlignment.IncorrectWarning" />
