@@ -15,6 +15,7 @@
 		"eslint": "^8.10.0",
 		"eslint-config-prettier": "^8.5.0",
 		"gulp": "^4.0.2",
+		"gulp-wp-pot": "^2.5.0",
 		"gulp-minify": "^3.1.0",
 		"gulp-postcss": "^9.0.0",
 		"gulp-sass": "^5.1.0",
