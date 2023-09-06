@@ -1,0 +1,8 @@
+parameters:
+    level: max
+    paths:
+        - smart-faq.php
+        - includes/
+        - post-types/
+    bootstrapFiles:
+        - .phpstan/exceptions.php

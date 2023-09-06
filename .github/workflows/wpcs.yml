@@ -1,0 +1,58 @@
+# Run CI tests via Github.
+name: PHPCS and Static Analysis.
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Cancel all previous workflow runs for the same branch that have not yet completed.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  phpcs:
+    name: PHPCS check
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: false
+      matrix:
+        php: [ '7.3', '7.4', '8.0', '8.1', '8.2' ]
+        experimental: [false]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup PHP
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: ${{ matrix.php }}
+          tools: composer'
+          ini-values: memory_limit=1G'
+          coverage: none
+
+      - name: Install Composer dependencies
+        uses: "ramsey/composer-install@v2"
+        with:
+          composer-options: "--no-progress --no-ansi --no-interaction"
+          dependency-versions: "lowest"
+
+      - name: Log debug information
+        run: |
+          php --version
+          composer --version
+          composer wpcs:rules
+
+      - name: PHP Static Analysis
+        run: composer phpstan
+
+      - name: Run PHPCS
+        run: composer phpcs:ci
+
+      - name: Run WPCS
+        run: composer wpcs

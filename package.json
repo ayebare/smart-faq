@@ -1,0 +1,48 @@
+{
+	"name": "smart-faq",
+	"version": "1.0.0",
+	"description": "Provides A nice Frequently asked Questions Page with answers hidden untill the question is clicked then the desired answer fades smoothly into view. To show the FAQ's, place [smart_faq] short Code in a default wordpress Page or post where you want to display the Frequently asked questions you created.",
+	"author": "brookX",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ayebare/smart-faq/"
+	},
+	"private": true,
+	"main": "gulpfile.js",
+	"devDependencies": {
+		"autoprefixer": "^10.4.13",
+		"cssnano": "^5.1.3",
+		"eslint": "^8.10.0",
+		"eslint-config-prettier": "^8.5.0",
+		"gulp": "^4.0.2",
+		"gulp-minify": "^3.1.0",
+		"gulp-postcss": "^9.0.0",
+		"gulp-sass": "^5.1.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.2.2",
+		"postcss": "^8.1.0",
+		"prettier": "^2.8.8",
+		"sass": "^1.62.1",
+		"vite": "^4.4.3",
+		"wp-pot": "^1.10.2"
+	},
+	"lint-staged": {
+		"./assets/src/*.{js}": [
+			"eslint --cache --fix"
+		],
+		"./assets/src/*.{js,scss}": [
+			"prettier --write",
+			"npm run build"
+		]
+	},
+	"browserslist": [
+		"defaults",
+		"not IE 11"
+	],
+	"scripts": {
+		"build": "gulp build",
+		"dev": "gulp watch",
+		"vitedev": "vite dev",
+		"prepare": "husky install"
+	}
+}
