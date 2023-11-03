@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="smart-faq">
+	<arg name="extensions" value="php" />
+	<ini name="memory_limit" value="2560M"/>
+	<file>.</file>
+
+	<rule ref="WordPress">
+		<exclude name="Universal.Arrays.DisallowShortArraySyntax.Found" />
+		<exclude name="Universal.WhiteSpace.PrecisionAlignment.Found" />
+		<exclude name="Generic.Formatting.MultipleStatementAlignment.IncorrectWarning" />
+		<exclude name="Generic.Formatting.MultipleStatementAlignment.NotSameWarning" />
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="Squiz.Commenting.FunctionComment.ExtraParamComment" />
+		<exclude name="WordPress.Security.NonceVerification.Missing" />
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+	</rule>
+
+	<exclude-pattern>vendor</exclude-pattern>
+	<exclude-pattern>assets</exclude-pattern>
+	<exclude-pattern>.phpstan</exclude-pattern>
+</ruleset>

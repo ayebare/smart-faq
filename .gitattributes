@@ -1,0 +1,15 @@
+/.wordpress-org
+/.git
+/.github
+/node_modules
+/src
+
+.distignore
+.gitignore
+readme.md
+composer.json
+composer-lock.json
+package.json
+package-lock.json
+phpcs.xml
+phpstan.neon

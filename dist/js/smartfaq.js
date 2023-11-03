@@ -1,0 +1,1 @@
+!function(s){s(document).ready(function(){s(".answer").hide(),s(".faq-body h2").click(function(){return s(this).next().toggleClass("show"),-1!=s(this).next().attr("class").indexOf("show")?(s(this).next(".answer").fadeIn(),s(this).addClass("close")):(s(this).next(".answer").fadeOut(),s(this).removeClass("close")),!1})})}(jQuery);
